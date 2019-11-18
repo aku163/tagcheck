@@ -7,7 +7,9 @@ pipeline{
             }
             steps{
                 script{
-                echo ${env.TAG_NAME}
+                sh """
+                echo "${env.TAG_NAME}"
+                """
                 }
             }
         }
