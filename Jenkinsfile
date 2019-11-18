@@ -8,12 +8,14 @@ pipeline{
         stage('Stage : Get branch name and push tag'){
             steps{
                 script{
-                if (env.BRANCH_NAME == "master" ) {
-                    initialise()
-                    pushTag()
+                    if (env.BRANCH_NAME == "master" ) {
+                        initialise()
+                        pushTag()
+                    }
                 }
             }
         }
+
         stage('tag building'){
             when { buildingTag() }    
             steps{
