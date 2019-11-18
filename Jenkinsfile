@@ -2,6 +2,7 @@ pipeline{
 
     environment{
         gitUserEmail = "jenkins-ci@lloydsbanking.com"
+        gitUserName = "Jenkins-CI"
     }
     agent any
     stages{
@@ -33,6 +34,7 @@ def initialise(){
 		def tokenisedOrigin = "https://"+C_USERNAME+":"+C_PASSWORD+"@"+GIT_URL.split("https://")[1]
 		sh("git remote set-url origin ${tokenisedOrigin}")
 		sh("git config  user.email \"${gitUserEmail}\"")
+        sh("git config  user.name \"${gitUserName}\"")
 	}
 
 	// Setting the proxy
