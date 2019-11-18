@@ -7,7 +7,7 @@ pipeline{
             }
             steps{
                 script{
-                echo $TAG_NAME        
+                echo $TAG_NAME
                 }
             }
         }
